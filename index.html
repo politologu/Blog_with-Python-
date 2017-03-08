@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Qazki Blog  | App Engine</title>
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/assets/js/scripts.js"></script>
+</head>
+<body>
+	<h1>Welcome to blog making - 2016</h1>
+	<p>This is my first blog post here and welcome to my world python</p>
+	<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+		<a class="brand" href="/">Blog App</a>
+		<ul class="nav">
+			<li class="active"><a href="/">Blog</li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/new">New</a></li>
+		</ul>
+	</div>
+</div>
+
+	<div class="posts">
+		<h2>Your latest posts</h2>
+		<hr />
+		{% for post in posts %}
+		<ul>
+			<li><h3>{{ post.title }} on {{post.adddate.strftime("%B %d, %Y")}}</h3>
+				<p>{{ post.content }} </p>
+			</li>
+			<hr />
+		</ul>
+		{%endfor%}
+	</div>
+
+	<div class="modal-footer">
+		Copyright &copy; 2016 All Rights Reserved
+	</div>
+
+</body>
+</html>
